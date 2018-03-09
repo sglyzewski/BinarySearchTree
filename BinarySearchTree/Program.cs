@@ -10,6 +10,14 @@ namespace BinarySearchTree
     {
         static void Main(string[] args)
         {
+            SearchTree tree = new SearchTree();
+            tree.Add(100);
+            tree.Add(115);
+            tree.Add(50);
+            tree.Add(25);
+            tree.Add(150);
+            tree.PrintFromBeginning();
+            Console.ReadKey();
 
         }
     }

@@ -1,0 +1,7 @@
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_35\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_35\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_35\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe.config
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_35\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.exe
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_35\BinarySearchTree\BinarySearchTree\bin\Debug\BinarySearchTree.pdb
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_35\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.exe
+\\Mac\Home\Desktop\Dev_Code_Camp\Day_35\BinarySearchTree\BinarySearchTree\obj\Debug\BinarySearchTree.pdb
