@@ -9,6 +9,7 @@ namespace BinarySearchTree
     class SearchTree
     {
         public Node head;
+        public SearchTree child;
 
         public SearchTree()
         {
@@ -16,8 +17,8 @@ namespace BinarySearchTree
         }
 
         public void Add(int dataToAdd)
-        {
-            Node nodeToAdd = new Node(dataToAdd);
+        { 
+        Node nodeToAdd = new Node(dataToAdd);
             if (head == null)
             {
                 head = nodeToAdd;
@@ -26,33 +27,59 @@ namespace BinarySearchTree
             else
             {
                 Node current = head;
-                while (current.left != null && head.data > nodeToAdd.data)
-                {
-                    //// move from one node to the next node
-                    //if (head.data > nodeToAdd.data)
-                    //{
-                        current = current.left;
-                    //}
-                }
-
-                while (current.right != null && head.data < nodeToAdd.data) {
-
-                    //if (head.data < nodeToAdd.data)
-                    //{
-                        current = current.right;
-                    //}
-                }
-                
-
-
+            
                 if (head.data > nodeToAdd.data)
                 {
+                    while (current.left != null)
+                    {
+                        current = current.left;
+                    }
+                    if (current.data > nodeToAdd.data)
+                    {
+                        current.left = nodeToAdd;
+                    }
+                    if (current.data < nodeToAdd.data)
+                    {
+                        current.right = nodeToAdd;
+                    }
 
-                    current.left = nodeToAdd;
                 }
-                else if(head.data<nodeToAdd.data) {
-                    current.right = nodeToAdd;
+
+                else if (head.data < nodeToAdd.data)
+                {
+                    while (current.right != null)
+                    {
+                        current = current.right;
+                    }
+                    if (current.data > nodeToAdd.data)
+                    {
+                        current.left = nodeToAdd;
+                    }
+                    if (current.data < nodeToAdd.data)
+                    {
+                        current.right = nodeToAdd;
+                    }
+
                 }
+
+
+
+                //while (current.data > nodeToAdd.data)
+                //{
+                   
+                //        current = current.left;
+               
+                //}
+
+                //while (current.data<nodeToAdd.data)
+                //{
+
+                    
+                //        current = current.right;
+              
+                //}
+
+                
             }
         }
 

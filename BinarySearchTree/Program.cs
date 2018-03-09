@@ -15,6 +15,7 @@ namespace BinarySearchTree
             tree.Add(115);
             tree.Add(50);
             tree.Add(25);
+            tree.Add(26);
             tree.Add(150);
             tree.PrintFromBeginning();
             Console.ReadKey();
