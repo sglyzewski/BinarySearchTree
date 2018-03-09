@@ -9,7 +9,6 @@ namespace BinarySearchTree
     class SearchTree
     {
         public Node head;
-        public SearchTree child;
 
         public SearchTree()
         {
@@ -18,7 +17,7 @@ namespace BinarySearchTree
 
         public void Add(int dataToAdd)
         { 
-        Node nodeToAdd = new Node(dataToAdd);
+            Node nodeToAdd = new Node(dataToAdd);
             if (head == null)
             {
                 head = nodeToAdd;
@@ -52,10 +51,8 @@ namespace BinarySearchTree
                         {
                             current.right = nodeToAdd;
                         }
-                    
 
                 }
-
                 else if (head.data < nodeToAdd.data)
                 {
                     while (current.left != null && current.right != null)
@@ -86,75 +83,94 @@ namespace BinarySearchTree
             }
         }
 
-        //public void Insert(int dataToAdd, int position)
-        //{
-        //    Node nodeToAdd = new Node(dataToAdd);
 
-        //    if (position < 0)
-        //    {
-        //        Console.WriteLine("No tree exists to insert into!");
-        //    }
-        //    else
-        //    {
-        //        Node current = head;
-        //        for (int i = 1; i < position; i++)
-        //        {
-        //            current = current.next;
-        //        }
-        //        Node temporaryNode = current.next;
-        //        current.next = nodeToAdd;
-        //        nodeToAdd.next = temporaryNode;
-        //    }
-        //}
-
-        public void Print(Node current)
+        public int Search(int dataToFind)
         {
-
-            Console.WriteLine("|" + current.data + "|");
-            
-                if (current.left != null)
-                {
-                    Console.WriteLine("Moved Left: ");
-                    Print(current.left);
-                }
-
-               if (current.right != null)
-                {
-                    Console.WriteLine("Moved Right:  ");
-                    Print(current.right);
-                }
-         
-
-        }
-
-        public void PrintFromBeginning()
-        {
-            if (head != null)
+            int nodesTraversed = 1;
+            bool dataNotInTree = false;
+            if (head == null)
             {
-                Print(head);
+                return -1;
             }
+            else
+            {
+                Node current = head;
+                Console.WriteLine("\n\nSearch Path: for " + dataToFind + " from Head: ");
+                Console.WriteLine("|" + head.data + "|");
+                if (dataToFind < current.data && dataToFind != current.data)
+                {
+                    while (current.data != dataToFind)
+                    {
+
+                        while (current.left != null && current.data != dataToFind)
+                        {
+                            
+                            current = current.left;
+                            Console.WriteLine( "left: " + current.data);
+
+                            nodesTraversed++;
+                        }
+
+                        while (current.right != null && current.data != dataToFind)
+                        {
+                            
+                            current = current.right;
+                            Console.WriteLine("right: " + current.data);
+
+                            nodesTraversed++;
+                        }
+
+                        if (current.left == null && current.right == null && current.data != dataToFind)
+                        {
+                            dataNotInTree = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (dataToFind > current.data && dataToFind != current.data)
+                {
+                    while (current.data != dataToFind)
+                    {
+                        while (current.right != null && current.data != dataToFind)
+                        {
+                           
+                            current = current.right;
+                            Console.WriteLine("right: " + current.data);
+                            nodesTraversed++;
+                        }
+                        while (current.left != null && current.data != dataToFind)
+                        {
+                            current = current.left;
+                            Console.WriteLine("left: " + current.data);
+                            nodesTraversed++;
+                        }
+
+                        if (current.left == null && current.right == null && current.data != dataToFind)
+                        {
+                            dataNotInTree = true;
+                            break;
+                        }
+
+                    }
+                }
+
+
+                if (dataNotInTree)
+                {
+                    Console.WriteLine(dataToFind + " doesn't exist in the tree");
+                }
+                else {
+                    Console.WriteLine("Arrived at " + dataToFind);
+                    Console.WriteLine("Total nodes traversed " + nodesTraversed);
+                }
+                return nodesTraversed;
+            }
+
         }
+        
 
 
-        //public int SearchForInsert(int dataToFind)
-        //{
-        //    int nodesTraversed = 1;
-        //    if (head == null)
-        //    {
-        //        return -1;
-        //    }
-        //    else
-        //    {
-        //        Node current = head;
-
-        //        while (current.next != null && current.data != dataToFind)
-        //        {
-        //            nodesTraversed++;
-        //            current = current.next;
-        //        }
-        //        return nodesTraversed;
-        //    }
-
-        //}
+        
     }
 }

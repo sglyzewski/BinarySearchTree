@@ -22,7 +22,9 @@ namespace BinarySearchTree
             tree.Add(110);
             tree.Add(109);
             tree.Add(26);
-            tree.PrintFromBeginning();
+            tree.Search(109);
+            tree.Search(26);
+            tree.Search(5);
             Console.ReadKey();
 
         }
